@@ -9,57 +9,57 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/src/profweb.jpg">
     <link rel="icon" type="image/png" href="src/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = { darkMode: 'class' }</script>
-    <title>My Portfolio</title>
+    <title>Rafael Ababa | BSIT Student & Web Developer in the Philippines</title>
 
 
 </head>
 
-<body class="font-['Inter'] bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
 
-    <header class="fixed top-0 left-0 w-full px-12 py-2 flex items-center justify-between
+    <header class="fixed top-0 left-0 w-full px-4 md:px-12 py-2 flex items-center justify-between
                    bg-white/70 dark:bg-white/5 backdrop-blur-xl
                    border-b border-slate-200 dark:border-white/10
                    shadow-[0_8px_30px_rgba(0,0,0,0.15)] z-50">
 
         <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
 
-        <a href="#home" class="relative text-2xl font-semibold tracking-wide text-sky-400">
+        <a href="#home" class="relative font-poppins text-xl font-bold tracking-wide text-sky-400">
             RafDev
         </a>
 
-        <nav id="mobile-menu" class="hidden md:flex items-center gap-10 relative">
+        <nav id="mobile-menu" class="hidden flex absolute top-full right-4 mt-4 w-30  flex-col items-center gap-3 rounded-xl border border-slate-200 dark:border-white bg-white/95 dark:bg-slate-900/95 p-4 shadow-lg backdrop-blur-md z-40 md:static md:top-auto md:right-auto md:mt-0 md:w-auto md:flex md:flex-row md:items-center md:gap-8 md:px-3 md:py-1 md:border-0 md:bg-transparent md:shadow-none">
 
-            <a href="#about" class="text-[15px] font-medium text-slate-400 hover:text-sky-400 transition duration-300">
+            <a href="#about" class="text-right text-[15px] md:text-left md:text-sm font-medium text-slate-400 hover:text-sky-400 transition duration-300">
                 About
             </a>
             <a href="#projects"
-                class="text-[15px] font-medium text-slate-400 hover:text-sky-400 transition duration-300">
+                class="text-right text-[15px] md:text-left md:text-sm font-medium text-slate-400 hover:text-sky-400 transition duration-300">
                 Projects
             </a>
             <a href="#contact"
-                class="text-[15px] font-medium text-slate-400 hover:text-sky-400 transition duration-300">
+                class="text-right text-[15px] md:text-left md:text-sm font-medium text-slate-400 hover:text-sky-400 transition duration-300">
                 Contact
             </a>
 
             <a href="#"
-                class="flex items-center gap-1.5 bg-sky-500 hover:bg-sky-600 text-white text-[15px] font-medium px-4 py-2.5 rounded-lg shadow-lg shadow-sky-500/20 transition duration-300">
+                class="flex items-center gap-1.5 bg-sky-500 hover:bg-sky-600 text-white text-[15px] md:text-sm font-medium px-4 py-2.5 md:px-3 md:py-2 rounded-lg shadow-lg shadow-sky-500/20 transition duration-300">
                 Resume
                 <img src="https://img.icons8.com/?size=100&id=hhu50WbNuf90&format=png&color=FFFFFF" alt="File"
                     class="w-5 h-5">
             </a>
 
             <button id="theme-toggle"
-                class="w-9 h-9 rounded-full border border-slate-300 dark:border-white/20 flex items-center justify-center hover:border-sky-400 transition duration-300">
+                class="w-9 h-9 md:w-8 md:h-8 rounded-full border border-slate-300 dark:border-white/20 flex items-center justify-center hover:border-sky-400 transition duration-300">
                 <i id="theme-icon" class="fa-solid fa-moon text-sm text-slate-600 dark:text-slate-300"></i>
             </button>
         </nav>
 
-        <button id="menu-btn" class="md:hidden text-white text-2xl">
+        <button id="menu-btn" class="md:hidden text-slate-400 text-2xl">
             <i class="fa-solid fa-bars"></i>
         </button>
 
@@ -74,7 +74,7 @@
             </div>
 
             <h1 class="text-6xl font-extrabold text-sky-500 tracking-wide">RafDev</h1>
-            <p class="mt-3 text-lg text-slate-400">Software Engineer | Full-Stack Web</p>
+            <p class="mt-3 text-lg font-poppins text-slate-400">Software Engineer | Full-Stack Web</p>
         </div>
     </section>
 
@@ -91,8 +91,8 @@
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="md:w-1/2 text-center md:text-left space-y-6 text-lg">
                     <p>Hello World! My name is <span class="font-semibold text-sky-500">Rafael Ababa</span>.</p>
-                    <p>I am a <strong>Software Engineer</strong>, <strong>Full-Stack Web Developer</strong>, and
-                        <strong>Computer Programmer</strong> passionate about UI/UX design and Artificial Intelligence.
+                    <p>Aspiring <strong>Software Developer</strong>, <strong>Full-Stack Web Developer</strong>, and
+                        <strong>Computer Programmer</strong> passionate about UI/UX design.
                     </p>
                     <p>I build modern, creative, and innovative applications that solve real-world problems.</p>
                     <p>I love creating websites that are user-friendly and professional.</p>
@@ -101,7 +101,7 @@
 
                 <div class="md:w-1/2 flex justify-center">
                     <img src="https://camo.githubusercontent.com/9598e31248e0d0f2f0067ae8cf24c68d2226621cdc3ee5303f930e4a3ea66ab4/68747470733a2f2f696d616765732e73717561726573706163652d63646e2e636f6d2f636f6e74656e742f76312f3537363966633430316236333162616231616464623261622f313534313538303631313632342d5445363451474b524a4738535741495553374e532f6b6531375a77644742546f6464493870446d34386b506f73776c7a6a53564d4d2d53784f703743563539425a772d7a505067646e346a557756634a45315a7657515578776b6d794578676c4e714770304976544a5a616d574c49327a76595748384b332d735f3479737a63703272795449304871544f6161556f68724938504936465879386339505774426c7141566c555335697a7064634958445a71445976707252715a32395077306f2f636f64696e672d667265616b2e676966"
-                        alt="Developer Illustration" class="w-[400px] max-w-full">
+                        alt="Developer Illustration" class="w-[400px] max-w-full rounded-2xl">
                 </div>
             </div>
         </div>
@@ -214,3 +214,9 @@
 </body>
 
 </html>
+
+
+
+
+
+
