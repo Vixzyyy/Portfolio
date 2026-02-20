@@ -1,67 +1,82 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
 
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
 
-menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
+    menuBtn.innerHTML = menu.classList.contains("hidden")
+      ? '<i class="fa-solid fa-bars"></i>'
+      : '<i class="fa-solid fa-xmark"></i>';
+  });
 
-  menuBtn.innerHTML = menu.classList.contains('hidden')
-    ? '<i class="fa-solid fa-bars"></i>'
-    : '<i class="fa-solid fa-xmark"></i>';
-});
+  const contactForm = document.querySelector("#contact-form");
 
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-const contactForm = document.querySelector('#contact-form');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); 
-    
     const name = contactForm.querySelector('input[name="name"]').value;
     const email = contactForm.querySelector('input[name="email"]').value;
     const message = contactForm.querySelector('textarea[name="message"]').value;
 
-  
     const submission = {
-        name,
-        email,
-        message,
-        timestamp: new Date().toISOString()
+      name,
+      email,
+      message,
+      timestamp: new Date().toISOString(),
     };
-    
-    let submissions = JSON.parse(localStorage.getItem('contactSubmissions')) || [];
 
+    const submissions = JSON.parse(localStorage.getItem("contactSubmissions")) || [];
     submissions.push(submission);
+    localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
 
-    
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-
-    
-    alert('Message sent successfully!');
-
+    alert("Message sent successfully!");
     contactForm.reset();
-});
+  });
 
+  const toggleBtn = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+  const icon = document.getElementById("theme-icon");
 
-const toggleBtn = document.getElementById("theme-toggle");
-const html = document.documentElement;
-const icon = document.getElementById("theme-icon");
-
-if (localStorage.getItem("theme") === "dark") {
+  if (localStorage.getItem("theme") === "dark") {
     html.classList.add("dark");
     icon.classList.replace("fa-moon", "fa-sun");
-}
+  }
 
-toggleBtn.addEventListener("click", () => {
+  toggleBtn.addEventListener("click", () => {
     html.classList.toggle("dark");
 
     if (html.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-        icon.classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("theme", "dark");
+      icon.classList.replace("fa-moon", "fa-sun");
     } else {
-        localStorage.setItem("theme", "light");
-        icon.classList.replace("fa-sun", "fa-moon");
+      localStorage.setItem("theme", "light");
+      icon.classList.replace("fa-sun", "fa-moon");
     }
-});
+  });
 
+  const cleanUrl = window.location.pathname + window.location.search;
+  if (window.location.hash) {
+    history.replaceState(null, "", cleanUrl);
+  }
+
+  document.querySelectorAll('header nav a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const rawTarget = (this.getAttribute("href") || "").trim();
+      const targetId = rawTarget.replace(/,+$/, "");
+
+      if (targetId.length <= 1) {
+        return;
+      }
+
+      const targetSection = document.querySelector(targetId);
+      if (!targetSection) {
+        return;
+      }
+
+      e.preventDefault();
+      targetSection.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, "", cleanUrl);
+    });
+  });
 });
